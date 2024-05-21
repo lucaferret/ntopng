@@ -57,6 +57,8 @@ import { default as PageSNMPSimilarity } from "./page-snmp-similarity.vue"
 import { default as PageSNMPDevices } from "./page-snmp-devices.vue"
 import { default as PageBlacklists } from "./page-blacklists.vue"
 import { default as PageHistoricalFlow } from "./page-historical-flow-details.vue"
+import { default as PageSNMPQoS } from "./page-snmp-qos.vue"
+import { default as PageSNMPConfig } from "./page-snmp-config.vue"
 
 // components
 import { default as AlertInfo } from "./alert-info.vue";
@@ -134,13 +136,17 @@ let ntopVue = {
     PageHostVsResult: PageHostVsResult,
     PageOpenPorts: PageOpenPorts,
     PageVulnerabilityScanReport: PageVulnerabilityScanReport,
+    PageFlowsList: PageFlowsList,
+
+    /* SNMP */
+    PageSNMPDevices: PageSNMPDevices,
+    PageSNMPQoS: PageSNMPQoS,
+    PageSNMPConfig: PageSNMPConfig,
     PageSNMPUsage: PageSNMPUsage,
     PageSNMPInterfaces: PageSNMPInterfaces,
     PageSNMPTopology: PageSNMPTopology,
     PageSNMPTopologyMap: PageSNMPTopologyMap,
     PageSNMPSimilarity: PageSNMPSimilarity,
-    PageFlowsList: PageFlowsList,
-    PageSNMPDevices: PageSNMPDevices,
 
     PageEditApplications: PageEditApplications,
 
