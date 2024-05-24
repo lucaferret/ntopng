@@ -637,7 +637,7 @@ void LocalHost::setServerPort(bool isTCP, u_int16_t port, ndpi_protocol *proto, 
   u_int32_t learning_period = ntop->getPrefs()->get_contacted_server_port_learning_period();
   if (set_port_status) {
     if (when - get_first_seen() > learning_period)
-      fprintf(stderr, " # # # new server port seen %d # # # \n", port);
+      ;//fprintf(stderr, " # # # new server port seen %d # # # \n", port);
   }
 }
 
