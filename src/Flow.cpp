@@ -2359,7 +2359,7 @@ void Flow::updateThroughputStats(float tdiff_msec, u_int32_t diff_sent_packets,
     bytes_thpt = bytes_msec;
     goodput_bytes_thpt = goodput_bytes_msec;
 
-    //#if DEBUG_TREND
+    #if DEBUG_TREND
     u_int64_t diff_bytes = diff_sent_bytes + diff_rcvd_bytes;
 
     ntop->getTrace()->traceEvent(TRACE_NORMAL,
@@ -2367,7 +2367,7 @@ void Flow::updateThroughputStats(float tdiff_msec, u_int32_t diff_sent_packets,
 				 "%lu][diff_rcvd_bytes: %lu][bytes_thpt: %.4f Mbit]",
 				 tdiff_msec, diff_bytes, diff_sent_bytes, diff_rcvd_bytes,
 				 (get_bytes_thpt() * 8)/1000000.);
-    //#endif
+    #endif
 
     if (top_bytes_thpt < get_bytes_thpt())
       top_bytes_thpt = get_bytes_thpt();
@@ -2512,7 +2512,9 @@ void Flow::periodic_stats_update(const struct timeval *tv) {
 
     if (last_update_time.tv_sec > 0) {
       float tdiff_msec = Utils::msTimevalDiff(tv, &last_update_time);
+#ifdef DEBUG
       u_int32_t total = diff_sent_bytes+diff_rcvd_bytes;
+#endif
       
       updateThroughputStats(tdiff_msec, diff_sent_packets, diff_sent_bytes,
 			    diff_sent_goodput_bytes, diff_rcvd_packets,
